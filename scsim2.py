@@ -1,10 +1,15 @@
+import pandas as pd
+import numpy as np
+
 class scsim2:
     def __init__(self, seed=757578, mean_rate=7.68, mean_shape=0.34, libloc=7.64, libscale=0.78,
                 expoutprob=0.00286, expoutloc=6.15, expoutscale=0.49, diffexpprob=.025, diffexpdownprob=.025,
                 diffexploc=1.0, diffexpscale=1.0, bcv_dispersion=0.448, bcv_dof=22.087):
-	'''
-	Single-cell parameters can be estimated from example datasets using Splatter
-	'''
+        '''
+        Create an scsim2 object to simulate single-cell RNA-seq dataset.
+        
+        Default Single-cell parameters were estimated from an example dataset as described in the cNMF paper
+        '''
         self.seed = seed
         self.mean_rate = mean_rate
         self.mean_shape = mean_shape
