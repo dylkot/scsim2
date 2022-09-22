@@ -5,6 +5,13 @@ from scsim2 import scsim2
 def isarray(x):
     return(hasattr(x, "__len__"))
 
+
+def rescale(x, new_min, new_max):
+    z = x - x.min()
+    z = z / z.max()
+    z = z*(new_max-new_min)+new_min
+    return(z)
+
 class SCsim_DiffScale(scsim2):
     
     def __init__(self, seed=757578, mean_rate=7.68, mean_shape=0.34, libloc=7.64, libscale=0.78,
