@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 from scsim2 import scsim2
 
+def isarray(x):
+    return(hasattr(x, "__len__"))
+
 class SCsim_DiffScale(scsim2):
     
     def __init__(self, seed=757578, mean_rate=7.68, mean_shape=0.34, libloc=7.64, libscale=0.78,
